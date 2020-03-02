@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SingleInput extends Navigation {
 
-    @FindBy(xpath = "/html/body/div[2]/div/div[2]/div[1]/div[2]/form/div/input")
+    @FindBy(id = "user-message")
     WebElement singleInputMessageField;
 
-    @FindBy(xpath = "//*[@id=\"treemenu\"]/li/ul/li[1]/ul/li[1]/a")
+    @FindBy(xpath = "//*[@id='treemenu']/li/ul/li[1]/ul/li[1]/a")
     WebElement simpleFromDemoButton;
 
     @FindBy(xpath = "//*[@id='get-input']/button")
@@ -19,14 +19,12 @@ public class SingleInput extends Navigation {
     @FindBy(id = "display")
     WebElement displayedMessage;
 
-
     public SingleInput(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-
-     public WebElement singleInputTest(String message) {
+    public WebElement singleInputTest(String message) {
         navigate(inputFormsButton);
         navigate(simpleFromDemoButton);
         singleInputMessageField.sendKeys(message);
